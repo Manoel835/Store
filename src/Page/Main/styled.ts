@@ -2,16 +2,17 @@ import styled from "styled-components";
 
 export const Page = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  h1 {
+    color: white;
+  }
 `;
-
-export const Container = styled.div`
-  display: flex;
+export const Flex = styled.div`
+  width: 50vw;
+  padding: 2rem;
+  height: 78vh;
   border-radius: 20px;
-  justify-content: space-between;
-  background-color: pink;
-`;
-export const Box = styled.div`
   background-color: red;
+  h1 {
+    text-align: center;
+  }
 `;

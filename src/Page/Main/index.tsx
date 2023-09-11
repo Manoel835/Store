@@ -1,35 +1,14 @@
-import axios from "axios";
-import { Container, Page, Box } from "./styled";
-import { useState, useEffect } from "react";
-
-type ProductProps = {
-  id: number;
-  description: string;
-};
-
+import Product from "../Product/index";
+import Sidebar from "../../Components/Sidebar/index";
+import { Page, Flex } from "./styled";
 export default function Main() {
-  const [product, setProducts] = useState<ProductProps[]>([]);
-
-  const getProducts = async () => {
-    axios
-      .get<ProductProps[]>("https://fakestoreapi.com/products/1")
-      .then(function (response) {
-        const data = response.data;
-        setProducts(data);
-      });
-  };
-  useEffect(() => {
-    getProducts();
-  }, []);
-
   return (
     <Page>
-      <Container>
-        <h1>Descrição</h1>
-        <Box>
-          <p key={product.id}>{product.description}</p>
-        </Box>
-      </Container>
+      <Flex>
+        <h1>Tudo E Mais Um Pouco</h1>
+        <Sidebar />
+      </Flex>
+      <Product />
     </Page>
   );
 }
