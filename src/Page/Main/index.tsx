@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Container, Page } from "./styled";
+import { Container, Page, Box } from "./styled";
 import { useState, useEffect } from "react";
 
 type ProductProps = {
@@ -12,7 +12,7 @@ export default function Main() {
 
   const getProducts = async () => {
     axios
-      .get<ProductProps[]>("https://fakestoreapi.com/products/")
+      .get<ProductProps[]>("https://fakestoreapi.com/products/1")
       .then(function (response) {
         const data = response.data;
         setProducts(data);
@@ -26,9 +26,9 @@ export default function Main() {
     <Page>
       <Container>
         <h1>Descrição</h1>
-        {product.map((product) => (
+        <Box>
           <p key={product.id}>{product.description}</p>
-        ))}
+        </Box>
       </Container>
     </Page>
   );
