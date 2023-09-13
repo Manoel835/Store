@@ -15,7 +15,9 @@ export default function Product() {
 
   const getProducts = async () => {
     axios
-      .get<ProductProps[]>("https://fakestoreapi.com/products/")
+      .get<ProductProps[]>(
+        "https://fakestoreapi.com/products/category/jewelery"
+      )
       .then(function (response) {
         const data = response.data;
         setProducts(data);
@@ -31,8 +33,9 @@ export default function Product() {
         {product.map((product) => (
           <Box key={product.id}>
             <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <span>R$:{product.price}</span>
+            <p>
+              {product.description} R$:<span>{product.price}</span>
+            </p>
             <img src={product.image}></img>
           </Box>
         ))}

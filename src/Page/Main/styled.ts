@@ -8,7 +8,7 @@ export const Page = styled.div`
 `;
 export const Flex = styled.div`
   padding: 2rem;
-  height: 78vh;
+  height: 79vh;
   border-radius: 20px;
   background-color: red;
   h1 {

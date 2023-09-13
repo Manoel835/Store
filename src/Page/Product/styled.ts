@@ -5,6 +5,7 @@ export const Page = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
 `;
 
 export const Container = styled.div`
@@ -19,6 +20,6 @@ export const Box = styled.div`
   background-color: white;
 
   img {
-    width: 18vw;
+    height: 20vh;
   }
 `;
