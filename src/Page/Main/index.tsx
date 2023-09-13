@@ -5,7 +5,10 @@ export default function Main() {
   return (
     <Page>
       <Flex>
-        <h1>Tudo E Mais Um Pouco</h1>
+        <h1>
+          Tudo
+          <br />E<br /> Mais Um Pouco
+        </h1>
         <Sidebar />
       </Flex>
       <Product />

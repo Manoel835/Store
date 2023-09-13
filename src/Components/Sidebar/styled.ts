@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
 export const SideBar = styled.div`
-  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  padding: 1rem;
   text-align: center;
-  justify-content: space-between;
   border-radius: 20px;
   background-color: white;
+  justify-content: space-evenly;
+`;
+export const Box = styled.div`
+  width: 20vh;
+  border-radius: 20px;
+  background-color: red;
 `;
