@@ -18,7 +18,7 @@ export default function Product() {
       .get<ProductProps[]>(
         "https://fakestoreapi.com/products/category/men's clothing"
       )
-      .then(function (response) {
+      .then((response) => {
         const data = response.data;
         setProducts(data);
       });
