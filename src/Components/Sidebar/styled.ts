@@ -10,7 +10,7 @@ export const SideBar = styled.div`
   background-color: white;
   justify-content: space-evenly;
 `;
-export const Box = styled.div`
+export const Box = styled.button`
   width: 20vh;
   border-radius: 20px;
   background-color: red;

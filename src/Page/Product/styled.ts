@@ -18,8 +18,9 @@ export const Box = styled.div`
   margin: 10px;
   border-radius: 20px;
   background-color: white;
+`;
 
-  img {
-    height: 20vh;
-  }
+export const Image = styled.img`
+  height: 30vh;
+  margin-left: 90px;
 `;

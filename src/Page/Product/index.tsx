@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Container, Page, Box } from "./styled";
+import { Container, Page, Box, Image } from "./styled";
 import { useState, useEffect } from "react";
 
 type ProductProps = {
@@ -16,7 +16,7 @@ export default function Product() {
   const getProducts = async () => {
     axios
       .get<ProductProps[]>(
-        "https://fakestoreapi.com/products/category/jewelery"
+        "https://fakestoreapi.com/products/category/men's clothing"
       )
       .then(function (response) {
         const data = response.data;
@@ -36,7 +36,7 @@ export default function Product() {
             <p>
               {product.description} R$:<span>{product.price}</span>
             </p>
-            <img src={product.image}></img>
+            <Image src={product.image}></Image>
           </Box>
         ))}
       </Container>
