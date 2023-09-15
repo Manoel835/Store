@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Box, Page } from "../styled";
+import { Box, Page, PageMain, Image, Container, DivContainer } from "./styled";
+import Sidebar from "../../../Components/Sidebar";
 
 export default function Eletronic() {
   type EletronicProps = {
@@ -12,25 +13,34 @@ export default function Eletronic() {
   };
   const [eletro, setEletro] = useState<EletronicProps[]>([]);
   const GetEltro = async () => {
-    axios
-      .get<EletronicProps[]>(
-        "https://fakestoreapi.com/products/category/electronics"
-      )
-      .then((response) => {
-        const data = response.data;
-        setEletro(data);
-      });
+    const response = await axios.get<EletronicProps[]>(
+      "https://fakestoreapi.com/products/category/electronics"
+    );
+    const data = response.data;
+    setEletro(data);
   };
   useEffect(() => {
     GetEltro();
   });
   return (
-    <Page>
-      {eletro.map((eletro) => (
-        <Box key={eletro.id}>
-          <h2>{eletro.title}</h2>
-        </Box>
-      ))}
-    </Page>
+    <PageMain>
+      <Page>
+        <Container>
+          <Sidebar />
+          <DivContainer>
+            {eletro.map((eletro) => (
+              <Box key={eletro.id}>
+                <h2>{eletro.title}</h2>
+                <p>
+                  {eletro.description}
+                  RS:<span>{eletro.price}</span>
+                </p>
+                <Image src={eletro.image}></Image>
+              </Box>
+            ))}
+          </DivContainer>
+        </Container>
+      </Page>
+    </PageMain>
   );
 }

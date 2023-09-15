@@ -1,11 +1,16 @@
-import Main from "./Main";
-import { PageMain } from "./styled";
+import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import Eletronic from "./Product/Eletronic/index";
+import Product from "./Product";
 
 function App() {
   return (
-    <PageMain>
-      <Main></Main>
-    </PageMain>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Product />} />
+        <Route path="/products/electronics" element={<Eletronic />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

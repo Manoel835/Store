@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SideBar, Box } from "./styled";
+import { SideBar, Box, Container } from "./styled";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -20,10 +20,18 @@ export default function Sidebar() {
 
   return (
     <SideBar>
+      <h1>
+        Tudo
+        <br />E<br /> Mais Um Pouco
+      </h1>
       {categories.map((category, index) => (
-        <Box key={index}>
-          <Link to={`/products/${category}`}>{category}</Link>
-        </Box>
+        <Container>
+          <Box key={index}>
+            <Link to={`/products/${category}`}>
+              <h1>{category}</h1>
+            </Link>
+          </Box>
+        </Container>
       ))}
     </SideBar>
   );
