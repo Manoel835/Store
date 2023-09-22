@@ -1,2 +1,2 @@
 # APi
-Projeto com intuido de aprender API
+Projeto com intuito de aprender API
